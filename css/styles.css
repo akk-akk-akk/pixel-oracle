@@ -18,7 +18,7 @@
 
 
 html {
-    font-family: 'Jersey 15', sans-serif;
+    font-family: 'Space Mono', sans-serif;
 
 }
 
@@ -34,8 +34,8 @@ html {
  * ********************************************************** */
 
 * {
-    text-transform: uppercase;
-    line-height: 80%;
+    /* text-transform: uppercase; */
+    line-height: 120%;
     font-weight: 400;
     color: rgb(47, 47, 47) !important;
 }
@@ -45,7 +45,18 @@ body {
     /* font-family: 'Space Mono', sans-serif; */
     background-color: #ffffff !important;
     color: var(--color-fg) !important;
-    background-image: url(../images/sky-bitmap.jpg) !important;
+}
+
+.background-image {
+    position: fixed; /* or absolute, depending on your needs */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/sky-bitmap2.jpg'); /* Replace with your image URL */
+    background-size: cover; /* or contain */
+    opacity: 0.9; /* 10% opacity */
+    z-index: -1; /* Make sure it stays behind other content */
 }
 
 

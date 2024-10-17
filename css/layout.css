@@ -269,6 +269,13 @@ max-width:100%;
 box-sizing:border-box;
 }
 
+.column__1 {
+  flex:1;
+}
+
+.column__2 {
+  flex:2;
+}
 
 .column,
 .row > ul > li {
@@ -314,11 +321,12 @@ h1 {
   font-size: var(--font-size-xl); 
   font-weight: 500;
   margin-bottom: var(--spacing-m);
-  -webkit-text-stroke-width: 0.25px;
+  -webkit-text-stroke-width: 0.5px;
 }
 
 
 h2 {
+  font-family: 'Space Mono', sans-serif;
   font-size: var(--font-size-l);
   font-weight: 500;
   margin-bottom: var(--spacing-s);
@@ -358,6 +366,7 @@ ul {
 
 p {
   font-size: var(--font-size-m);
+  -webkit-text-stroke-width: 0.2px;
 }
 
 p i {
@@ -368,10 +377,10 @@ p b {
   -webkit-text-stroke-width: 0.75px;
 }
 
-p a {
-  /* text-decoration:underline; */
-  /* text-underline-offset: 3px; */
-}
+/* p a {
+  text-decoration:underline;
+  text-underline-offset: 3px;
+} */
 
 a {
   color: var(--color-link);
@@ -567,6 +576,11 @@ input[type="file"] + label:hover {
   border: solid 1px var(--color-3);
 }
 
+#change-image, #classify-button {
+  position: relative;
+  z-index: 1; /* Ensure buttons are on top of the background */
+}
+
 #uploaded-image {
   max-width: 100%;
   max-height: 400px;
@@ -623,7 +637,7 @@ filter: grayscale(100%);
 /*
 .row > .column:first-child {
   text-shadow: 0 0 5px #fff, 0 0 10px var(--color-3), 0 0 10px var(--color-3);
-  color: #000000; /* Adjust this color as needed */
+  color: #000000;
 }
  */
 

@@ -186,7 +186,7 @@ document.getElementById('classify-button').addEventListener('click', async () =>
 
     // Hide the button and show a loading message
     classifyButton.style.display = 'none';
-    resultDiv.innerText = 'Seeking your answer...';
+    resultDiv.innerText = 'Consulting the Oracle...';
     resultDiv.style.display = 'block';
 
     const file = imageInput.files[0];
