@@ -623,7 +623,7 @@ filter: grayscale(100%);
 /*
 .row > .column:first-child {
   text-shadow: 0 0 5px #fff, 0 0 10px var(--color-3), 0 0 10px var(--color-3);
-  color: #000000;
+  color: #000000; /* Adjust this color as needed */
 }
  */
 
