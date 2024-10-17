@@ -45,7 +45,7 @@ body {
     /* font-family: 'Space Mono', sans-serif; */
     background-color: #ffffff !important;
     color: var(--color-fg) !important;
-    /* background-image: url(../images/noise.png) !important; This removes the noise background */
+    background-image: url(../images/sky-bitmap.jpg) !important;
 }
 
 
