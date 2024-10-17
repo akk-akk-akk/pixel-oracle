@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pixel Oracle</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.13.0/dist/tf.min.js"></script>
+    <script src="script.js" defer></script>
+
+    <link rel="icon" type="image/svg+xml" href="/images/coverr.jpg" />
+
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+</head>
+
+<body>
+    <main>
+        <article>
+            <section>
+                <body>
+                    <div class="width__m row margin__auto center__type">
+                        <div class="row padding__top-m padding__bottom-xl type__content" style="gap: var(--spacing-xl)">
+                            <div class="column">
+
+                                <h1>Pixel Oracle</h1>
+                                <img style="border: solid 1px black;border-radius: 50%; max-width:300px; align-self: center;"
+                                    src="images/noise-gif.gif">
+                                <br><br><br>
+                                <h2>The pixel oracle harnesses the power find divine meaning within the stars in
+                                    code. Just like how early humans learnt to read the stars, the computer holds a
+                                    power to read patterns currently imperceivable by man.
+                                    <br><br>
+                                    Let the image you choose be something of value to you or the situation you are
+                                    facing. With that simple act, you provide the Pixel Oracle with a valuable source
+                                    from which to find meaning from. It will then bestow you with divine guidance on how
+                                    to proceed with a dilemma you might be facing. For instance, if you are deciding
+                                    whether or not to take up a job offer, you may choose to upload an image of the
+                                    house, or a picture of your late grandma, if you wish to ask for her opinion.
+                                    <br><br>
+                                    Before you select the material, have a question clear in your mind...
+                                </h2>
+                            </div>
+                            <div style="border: solid 1px" class="column">
+                                <div class="width__l row padding__top-l   center__type">
+                                    <button id="change-image" style="display: none;">Change Image</button>
+                                </div>
+
+                                <div class="width__l row margin__auto center__type">
+                                    <div class="container">
+                                        <div class="input-group">
+                                            <input type="file" id="image-input" accept="image/*">
+                                            <label for="image-input">Provide Source Material</label>
+                                            <div class="image-preview" id="image-container" style="display: none;">
+                                                <img id="uploaded-image" src="" alt="Uploaded image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="width__l row margin__auto padding__bottom-l center__type">
+                                    <div id="result-container">
+                                        <button class="classify-button" id="classify-button" style="display: none;">Seek
+                                            your Answer...</button>
+                                    </div>
+                                    <div style="text-decoration: underline;" class="width__l row margin__auto padding__y-m center__type" id="result"></div>
+                                </div>
+
+                                <script src="script.js"></script>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row center__type padding__y-xs">
+                    <p> ▄▄▄·▪  ▐▄• ▄ ▄▄▄ .▄▄▌            ▄▄▄   ▄▄▄·  ▄▄· ▄▄▌  ▄▄▄ .
+                        ▐█ ▄███  █▌█▌▪▀▄.▀·██•      ▪     ▀▄ █·▐█ ▀█ ▐█ ▌▪██•  ▀▄.▀·
+                         ██▀·▐█· ·██· ▐▀▀▪▄██▪       ▄█▀▄ ▐▀▀▄ ▄█▀▀█ ██ ▄▄██▪  ▐▀▀▪▄
+                        ▐█▪·•▐█▌▪▐█·█▌▐█▄▄▌▐█▌▐▌    ▐█▌.▐▌▐█•█▌▐█ ▪▐▌▐███▌▐█▌▐▌▐█▄▄▌
+                        .▀   ▀▀▀•▀▀ ▀▀ ▀▀▀ .▀▀▀</p>
+                    </div>
+
+                    <div class="width__s margin__auto">
+                        <div class="row padding__top-xl type__content">
+                            <div style="padding-left:20%;padding-right:20%" class="column center__type">
+                                <h1>How it Works</h1>
+                                <h2>
+                                    The pixel oracle has been trained by machine learning (Teachable Machine) to
+                                    classify 3 different types of images. The source material given to the system are 10
+                                    sets of randomly generated noise images. If you're curious about the chances of two
+                                    images being the same, tt is...*drum roll*... 1 divided by 2/1,000,000, which
+                                    ChatGPT tells me is a number with over 300,000 digits! I'm not good with math but I
+                                    think that means basically 0.
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row row__three type__content">
+                            <div class="column">
+                                <img src="images/noise-1.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-2.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-3.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-4.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-5.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-6.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-7.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-8.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-9.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-10.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-11.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-12.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-13.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-14.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-15.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-16.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-17.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-18.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-19.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-20.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-21.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-22.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-23.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-24.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-25.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-26.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-27.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-28.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-29.png">
+                            </div>
+                            <div class="column">
+                                <img src="images/noise-30.png">
+                            </div>
+                        </div>
+                    </div>
+                </body>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>

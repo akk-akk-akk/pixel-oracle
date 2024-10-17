@@ -1,0 +1,638 @@
+/* **********************************************************
+ * default style that take care of the default layout 
+ * and typography.
+ * ********************************************************** */
+
+/* **********************************************************
+ * let's get started and do a default reset
+ * ********************************************************** */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark light;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+
+
+/* **********************************************************
+ * now let's take care of our main layout and content
+ *
+ * 1. header and main-navigation
+ * 2.1 weekly
+ * 2.2 repository
+ * 2.3 misc
+ * 3. footer
+ * 4. main layout
+ * 
+ * ********************************************************** */
+
+/* 1. header and main-navigation menu */
+
+header {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+main {
+  margin-top: var(--header__height);
+}
+
+
+/* 2.1 weekly */
+
+.weekly ul {
+  margin-bottom: var(--spacing-l);
+}
+
+.weekly h2 {
+  font-weight: 500;
+}
+
+.weekly ul li {
+  border-bottom: 1px solid var(--color-3);
+}
+
+.weekly ul li:first-child {
+  border-top: 1px solid var(--color-3);
+}
+
+.weekly ul li a {
+  padding: var(--spacing-xs);
+  transition: padding-left 0.3s;
+  display: block;
+  color: var(--color-3);
+}
+
+.weekly ul li a:hover {
+  padding-left: var(--spacing-s);
+}
+
+
+/* 2.2 repository */
+
+.repo {
+  margin-bottom:var(--spacing-l);
+}
+
+.repo h2 {
+  margin-bottom: var(--spacing-s);
+}
+
+.repo__list ul {
+  border-top: solid var(--color-2) 1px;
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-m);
+}
+
+.repo__item ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.repo__item ul li img {
+  max-height: 12rem;
+}
+
+.repo__item ul li p {
+  font-size: var(--font-size-s);
+}
+
+.repo__item ul li:nth-child(1) {
+  padding-right: var(--spacing-s);
+  width: 25%;
+}
+
+.repo__item ul li:nth-child(2) {
+  padding-right: var(--spacing-s);
+  font-style: italic;
+  width: 30%;
+}
+
+.repo__item ul li:nth-child(3) {
+  width: 45%;
+}
+
+@media (orientation: portrait) {
+  .repo__item ul {
+    display: block;
+  }
+
+  .repo__item ul li:nth-child(n) {
+    margin-top: var(--spacing-m);
+    width: 90%;
+  }
+  /* main {
+    margin-top: 0;
+  } */
+}
+
+/* 2.3 image with caption */
+
+figcaption p {
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  font-style: italic;
+  -webkit-text-stroke-width: 0.75px;
+  width:80%;
+}
+figcaption p b {
+  font-weight: 700;
+  font-size: inherit;
+}
+
+
+/* 2.4 misc */
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+  top: var(--spacing-l);
+}
+
+.scroll__top {
+  margin: var(--spacing-s) auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 2rem;
+}
+
+.scroll__top a {
+  font-size: 1.25rem;
+  padding: 1rem;
+  transition: color 0.3s;
+  color:var(--color-nav-link);
+}
+
+.embed__video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.embed__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*
+ * image filters
+ * https://www.w3schools.com/cssref/css3_pr_filter.php
+ */
+ .img__bw {
+  filter: grayscale(100%);
+}
+
+.img__stroke {
+  border: 2px solid #dadada;
+}
+
+/* 3. footer */
+
+footer {
+  min-height: 12rem;
+  text-align: center;
+  /* padding-top: var(--spacing-m); */
+}
+
+/* 4. main layout */
+
+.row {
+  align-items: start;
+  /* padding-bottom: var(--spacing-l); */
+}
+
+.row,
+.row > ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  gap: var(--spacing-xl);
+}
+
+.row img {
+  width: 100%;
+  height: 100%;
+}
+
+.row__no-gap {
+  gap: 0;
+}
+
+.row__small-gap {
+  gap: 5px;
+}
+
+.row__three {
+  display: grid;
+  flex-wrap:wrap;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 5px;
+max-width:100%;
+box-sizing:border-box;
+}
+
+
+.column,
+.row > ul > li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+
+.column h1 {
+  gap: var(--spacing-m); /* Add this if you want to control the gap size in column layouts */
+}
+
+.column__half {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 50%;
+}
+
+.column__double {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 2;
+}
+
+.type__content {
+  margin-left: var(--spacing-l);
+  margin-right: var(--spacing-l);
+  margin-bottom: var(--spacing-l);
+}
+
+.center__type {
+  display: block;
+  text-align: center;
+}
+
+/* **********************************************************
+ * Main typography
+ * ********************************************************** */
+
+h1 {
+  font-size: var(--font-size-xl); 
+  font-weight: 500;
+  margin-bottom: var(--spacing-m);
+  -webkit-text-stroke-width: 0.25px;
+}
+
+
+h2 {
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  margin-bottom: var(--spacing-s);
+  -webkit-text-stroke-width: 0.5px;
+}
+
+
+h3 {
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  margin-bottom: var(--spacing-l);
+  text-decoration: underline;
+  color: var(--color-10)
+}
+
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-m);
+  font-weight: 600;
+  margin-bottom: var(--spacing-l);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type:none;
+}
+
+/* **********************************************************
+ * Paragraph styling
+ * ********************************************************** */
+
+
+p {
+  font-size: var(--font-size-m);
+}
+
+p i {
+  color: var(--color-3);
+}
+
+p b {
+  -webkit-text-stroke-width: 0.75px;
+}
+
+p a {
+  /* text-decoration:underline; */
+  /* text-underline-offset: 3px; */
+}
+
+a {
+  color: var(--color-link);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration-color: transparent;
+}
+
+p:not(:last-child) {
+  margin-bottom: var(--spacing-m);
+}
+
+.p__size-l {
+  font-size: var(--font-size-l);
+}
+
+.p__size-m {
+  font-size: var(--font-size-m);
+}
+
+.p__size-s {
+  font-size: var(--font-size-s);
+}
+
+.p__size-xs {
+  font-size: var(--font-size-xs);
+}
+
+.p__width-l {
+  width: 100%;
+}
+
+.p__width-m {
+  width: 60%;
+  min-width: 20rem;
+}
+
+.p__width-s {
+  width: 40%;
+  min-width: 15rem;
+}
+
+.p__width-xs {
+  width: 20%;
+  min-width: 10rem;
+}
+
+
+
+@media (orientation: portrait) {
+
+  .p__size-xl {
+    font-size: var(--font-size-l);
+  }
+
+  .p__size-l {
+    font-size: var(--font-size-m);
+  }
+  
+  .p__size-m {
+    font-size: var(--font-size-s);
+  }
+  
+}
+
+
+
+/* **********************************************************
+ * special features           
+ * 1. lightbox
+ * ********************************************************** */
+
+
+/* 1. lightbox
+ * click on an image (must implement class="zoom") to go full size 
+ * from: https://code-boxx.com/image-zoom-css-javascript
+ */
+
+#lightbox {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity ease 0.3s;
+}
+
+#lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lightbox img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.zoom {
+  cursor: pointer;
+}
+
+/* ********************************************************** */
+/* debug, when enabled, useful to see the layout-boxes for    */
+/* sections and divs.                                         */
+/* set border to 1px below
+/* ********************************************************** */
+
+section,
+div,
+ul,
+li {
+  border: 0px solid;
+}
+
+.outline {
+  border: 1px dotted var(--color-3);
+}
+
+
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* PIXEL ORACLE */
+
+
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  
+}
+
+input[type="file"] + label {
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: solid 1px var(--color-3);
+}
+
+input[type="file"] + label:hover {
+  background-color: var(--color-3);
+}
+
+/* button {
+  font-family: 'Space Mono', sans-serif;
+  font-size: var(--font__size-m);
+} */
+
+#classify-button {
+  /* font-family: 'Space Mono', sans-serif; */
+  font-family: inherit;
+  font-size: inherit;
+  color: rgb(255, 255, 255);
+  background-color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: solid 1px var(--color-3);
+}
+
+#uploaded-image {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: 10%;
+ 
+}
+
+#image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.container {
+max-height: 300px;
+margin: 0 auto;
+padding: 1rem 0;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.image-preview img {
+image-rendering: pixelated;
+width: 1000px;
+height: auto;
+filter: grayscale(100%);
+}
+
+#change-image {
+  /* Copy the styles from your .custom-button class */
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: solid 1px var(--color-3);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#change-image:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/*
+.row > .column:first-child {
+  text-shadow: 0 0 5px #fff, 0 0 10px var(--color-3), 0 0 10px var(--color-3);
+  color: #000000;
+}
+ */
+
+ .ascii-title {
+  font-family: monospace;
+  white-space: pre;
+  font-size: 10px;  /* Adjust as needed */
+  line-height: 1;
+  text-align: center;
+  color: #000;  /* Adjust color as needed */
+  margin: 20px 0;  /* Adjust spacing as needed */
+}

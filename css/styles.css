@@ -1,0 +1,57 @@
+/* **********************************************************
+ * add custom styles after imports below
+ * ********************************************************** */
+
+@import "default.css";
+@import "layout.css";
+@import "menu.css";
+@import "queries.css";
+
+/* **********************************************************
+ * to import a font, use the @import option, you can find
+ * lots of font options at fonts.google.com for example.
+ * ********************************************************** */
+
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Jersey+15+Charted&family=Karla:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+html {
+    font-family: 'Jersey 15', sans-serif;
+
+}
+
+
+/* **********************************************************
+ * Customizing
+ *
+ * changes to default settings like colors, typography,
+ * spacing can be made in default.css
+ *
+ * other custom settings, start below
+ *
+ * ********************************************************** */
+
+* {
+    text-transform: uppercase;
+    line-height: 80%;
+    font-weight: 400;
+    color: rgb(47, 47, 47) !important;
+}
+
+
+body {
+    /* font-family: 'Space Mono', sans-serif; */
+    background-color: #ffffff !important;
+    color: var(--color-fg) !important;
+    /* background-image: url(../images/noise.png) !important; This removes the noise background */
+}
+
+
+
+@media (orientation: portrait) {
+    * {
+        font-size: 16px;
+    }
+}
